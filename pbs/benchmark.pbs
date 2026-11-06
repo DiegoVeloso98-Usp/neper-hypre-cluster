@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Resource counts are supplied by ./run so one script serves the whole sweep.
+#PBS -j oe
+set -euo pipefail
+cd "${PBS_O_WORKDIR:?Submit from the repository root}"
+source scripts/environment.sh
+if [[ "${BENCH_MODE:?}" == build ]]; then
+    ./build
+else
+    python3 scripts/benchmark.py run --nodes "${BENCH_NODES:?}" \
+        --ranks "${BENCH_RANKS:?}" --repeats "${BENCH_REPEATS:?}" \
+        --output "${BENCH_OUTPUT:?}"
+fi

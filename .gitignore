@@ -1,0 +1,17 @@
+/.build/
+/build-validation-*.log
+/results/
+/cluster.local.env
+/mesh/polycrystal_1000.inp
+/app/build/
+/app/lib/
+/app/include/base/*Revision.h
+/app/*-opt
+/app/*.la
+/app/.libs/
+*.o
+*.lo
+*.d
+*.mod
+*.plugin
+__pycache__/

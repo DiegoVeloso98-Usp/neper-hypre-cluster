@@ -1,0 +1,10 @@
+{
+  "grains": 1000,
+  "elements": 1000000,
+  "nodes": 1030301,
+  "displacement_dofs": 3090903,
+  "elements_per_grain": 1000,
+  "sha256": "0a4595d91e643400a7d627add5fe275e868a0afb875e17a963159c056f2aeb43",
+  "uncompressed_bytes": 134273323,
+  "description": "Exact cleaned Abaqus mesh used by the workstation benchmark"
+}

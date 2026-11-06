@@ -1,0 +1,9 @@
+{
+  "description": "Workstation strict-tolerance reference for the same 1000-grain mesh, orientations and five elastic steps",
+  "source": "slurm_elastic_sweep/grains_01000/np_050/repeat_01",
+  "reference_tolerance": 0.0001,
+  "moose_commit": "98907de29962187fe16760caa66f882a810b8242",
+  "petsc_version": "3.25.4",
+  "dt": 1e-06,
+  "steps": 5
+}

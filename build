@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")"
+source scripts/environment.sh
+[[ -f "$MOOSE_DIR/framework/Makefile" ]] || {
+    echo "Set MOOSE_DIR to your compiled cluster MOOSE installation in cluster.local.env." >&2
+    exit 1
+}
+mkdir -p .build
+python3 scripts/benchmark.py prepare
+make -C app -j "${BUILD_JOBS}" METHOD=opt > .build/app-build.log 2>&1
+bash umat/umat_job.sh > .build/umat-build.log 2>&1
+python3 scripts/benchmark.py provenance
+echo "Built app/umat_oxford-opt and umat/UMAT-opt.plugin."
